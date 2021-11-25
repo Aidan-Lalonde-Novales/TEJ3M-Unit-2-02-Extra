@@ -1,0 +1,22 @@
+import time
+import board
+import digitalio
+
+blink_time = 1.0 
+# variable is set to 1000ms or 1 second
+
+led = digitalio.DigitalInOut(board.LED)
+led.direction = digitalio.Direction.OUTPUT
+
+while True: 
+    led.value = True
+    # keeps LED on
+    time.sleep(blink_time) 
+    # waits for the value of the blink_time variable
+    led.value = False
+    # keeps LED off
+    time.sleep(1.0)
+    # waits for 1000ms or 1 second
+
+    blink_time = blink_time + 1.0
+    # adds 1000ms or 1 second to the blink_time variable every cycle
